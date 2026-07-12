@@ -121,7 +121,6 @@ The parser automatically extracts and analyzes ten quantitative quality metrics 
 | dRA / dDec Residuals | Astrometric Quality | Residual errors of the plate solution in right ascension and declination. |
 | Angular Velocity | Kinematic | Apparent rate of motion across the sky. |
 | Reference Stars Used | Calibration Robustness | Number of stars contributing to the plate solution. |
-```
 
 ---
 
