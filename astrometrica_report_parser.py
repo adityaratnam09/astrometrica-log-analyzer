@@ -2,9 +2,6 @@
 """
 Astrometrica Report Parser & Publication-Grade Plotting Pipeline
 Author: Aditya Rajiv Ratnam
-Institutional Affiliation: Cambridge A-Level Program, India
-Contact: adityarajivratnam [at] gmail [dot] com
-Date: July 2026
 """
 
 import os
@@ -13,9 +10,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Configuration
-TARGET_ID = "AST0001"   # NOTE: must match the designation used in MPCReport.txt /
-                         # PhotReport.txt / Astrometrica.log. Change to "PAP0001"
-                         # once/if that's the provisional designation for this batch.
+# NOTE: must match the designation used in MPCReport.txt
+# / PhotReport.txt / Astrometrica.log. 
+TARGET_ID = "AST0001"
+
 FILE_PATH_MPC = "MPCReport.txt"
 FILE_PATH_PHOT = "PhotReport.txt"
 FILE_PATH_LOG = "Astrometrica.log"
@@ -91,7 +89,7 @@ def parse_all_logs(target_id):
     # 3. Parse per-target "Position added" blocks -> Flux, FWHM, Fit RMS,
     #    dRA/dDec residual errors, and the source image filename.
     block_re = re.compile(
-        r'Position added [a-z]+ from file ([^\s:]+):\r?\n'  # filename
+        r'Position added [a-z]+ from file ([^\s:]+):\r?\n'   # filename
         r'([^\n]*)\n'                                        # data row
         r'([^\n]*)\n'                                        # residual/error row
         r'(\s*' + re.escape(target_id) + r'[^\n]*)\n'        # embedded designation line
@@ -304,11 +302,7 @@ def generate_plots(data):
     axs2[2, 1].grid(True, linestyle=':', alpha=0.6)
     axs2[2, 1].set_title("Angular Velocity vs Time")
 
-    # hspace can shrink now that each row's own x-axis label fills part of
-    # the gap; without that content the gap needed to be much larger just
-    # to keep the category labels below from visually colliding with the
-    # subplot titles above.
-    fig2.subplots_adjust(top=0.90, bottom=0.06, hspace=0.62, wspace=0.32, left=0.10, right=0.97)
+    fig2.subplots_adjust(top=0.90, bottom=0.06, hspace=0.55, wspace=0.32, left=0.10, right=0.97)
 
     # Gray category labels sit close to the top of the row they describe
     # (not centered in the gap above them), so each label reads as
@@ -321,7 +315,7 @@ def generate_plots(data):
     def label_above(pos_top_of_row, y_bottom_of_row_above, x_center, text):
         # Weighted 80% of the way down from the row-above's bottom toward
         # this row's top, so the label sits just above this row's title.
-        y = y_bottom_of_row_above + 0.80 * (pos_top_of_row - y_bottom_of_row_above)
+        y = y_bottom_of_row_above + 0.70 * (pos_top_of_row - y_bottom_of_row_above)
         fig2.text(x_center, y, text, **label_kwargs)
 
     label_above(pos0[0].y1, 0.98, (pos0[0].x0 + pos0[1].x1) / 2, "Photometric")
