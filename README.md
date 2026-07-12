@@ -122,8 +122,6 @@ The parser automatically extracts and analyzes ten quantitative quality metrics 
 | Angular Velocity | Kinematic | Apparent rate of motion across the sky. |
 | Reference Stars Used | Calibration Robustness | Number of stars contributing to the plate solution. |
 
----
-
 ## Demonstrated Results
 
 Using an object from an IASC practice image set, the framework demonstrates
