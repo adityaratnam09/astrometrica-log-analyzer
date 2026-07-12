@@ -107,39 +107,32 @@ Running the script generates the figures presented in the paper, including
 
 ## Extracted Metrics
 
-The parser automatically extracts and analyzes
+I'd replace the **Extracted Metrics** section with the following, which mirrors **Table 3** from the paper and is clearer for GitHub readers.
 
-### Photometric
+```markdown
+## Extracted Metrics
 
-- Magnitude
-- Flux
+The parser automatically extracts and analyzes ten quantitative quality metrics from Astrometrica's standard output files.
 
-### Detection Quality
-
-- Signal-to-Noise Ratio (SNR)
-- Full Width at Half Maximum (FWHM)
-
-### Astrometric
-
-- Fit RMS
-- Right Ascension Residual
-- Declination Residual
-
-### Calibration
-
-- Photometric Zero Point
-- Calibration Scatter
-- Reference Star Count
-
-### Kinematic
-
-- Angular Velocity
+| Metric | Category | Purpose |
+|---------|----------|---------|
+| Magnitude | Photometric | Apparent brightness of the detected object. |
+| Flux | Photometric | Measured signal from the object. |
+| Plate Zero Point | Photometric Calibration | Calibration constant relating instrumental and standard magnitudes. |
+| Calibration Scatter (dmag) | Photometric Calibration | Consistency of the reference-star calibration. |
+| SNR | Detection Quality | Strength of the detected signal relative to background noise. |
+| FWHM | Image Quality | Apparent width of the object's image, indicating focus and seeing. |
+| Fit RMS | Astrometric Quality | Accuracy of the plate solution. |
+| dRA / dDec Residuals | Astrometric Quality | Residual errors of the plate solution in right ascension and declination. |
+| Angular Velocity | Kinematic | Apparent rate of motion across the sky. |
+| Reference Stars Used | Calibration Robustness | Number of stars contributing to the plate solution. |
+```
 
 ---
 
 ## Demonstrated Results
 
-Using the IASC practice object **AST0001**, the framework demonstrates
+Using an object from an IASC practice image set, the framework demonstrates
 
 - successful extraction of ten observational quality metrics
 - automatic generation of publication-ready figures
