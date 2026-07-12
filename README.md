@@ -107,11 +107,6 @@ Running the script generates the figures presented in the paper, including
 
 ## Extracted Metrics
 
-I'd replace the **Extracted Metrics** section with the following, which mirrors **Table 3** from the paper and is clearer for GitHub readers.
-
-```markdown
-## Extracted Metrics
-
 The parser automatically extracts and analyzes ten quantitative quality metrics from Astrometrica's standard output files.
 
 | Metric | Category | Purpose |
