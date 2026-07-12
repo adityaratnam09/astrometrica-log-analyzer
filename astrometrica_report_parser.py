@@ -308,7 +308,7 @@ def generate_plots(data):
     # the gap; without that content the gap needed to be much larger just
     # to keep the category labels below from visually colliding with the
     # subplot titles above.
-    fig2.subplots_adjust(top=0.90, bottom=0.06, hspace=0.75, wspace=0.32, left=0.10, right=0.97)
+    fig2.subplots_adjust(top=0.90, bottom=0.06, hspace=0.62, wspace=0.32, left=0.10, right=0.97)
 
     # Gray category labels sit close to the top of the row they describe
     # (not centered in the gap above them), so each label reads as
