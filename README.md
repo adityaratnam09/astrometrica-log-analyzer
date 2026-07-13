@@ -24,7 +24,7 @@ The framework operates directly on
 
 and generates publication-quality figures, summary statistics, and quality diagnostics.
 
-The framework is independent of any particular observing session and can be applied directly to any IASC Astrometrica reduction.
+The framework is independent of any particular observing session and can be applied directly to any Astrometrica reduction.
 
 ---
 
@@ -84,7 +84,7 @@ pip install numpy pandas matplotlib scipy
 
 ## Running the Code
 
-Simply execute
+In the directory containing the Astrometrica output files, simply execute
 
 ```bash
 python astrometrica_report_parser.py
