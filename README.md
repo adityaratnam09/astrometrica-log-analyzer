@@ -1,6 +1,6 @@
 # astrometrica-log-analyzer
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21342573.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21342573.svg)](https://doi.org/10.5281/zenodo.21342573)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
