@@ -1,6 +1,6 @@
 # astrometrica-log-analyzer
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21342573.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -169,5 +169,5 @@ Ratnam, A. R. (2026). *astrometrica-log-analyzer* (Version 1.0.0) [Computer soft
 **Technical report (Zenodo):**
 
 ```text
-Ratnam, A. R. (2026). *A Quantitative Framework for Evaluating Asteroid Observations from Astrometrica Log Files*. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXXX
+Ratnam, A. R. (2026). *A Quantitative Framework for Evaluating Asteroid Observations from Astrometrica Log Files*. Zenodo. https://doi.org/10.5281/zenodo.21342573
 ```
