@@ -1,17 +1,12 @@
 #!/usr/bin/env python3
-"""
-Astrometrica Report Parser & Publication-Grade Plotting Pipeline
-Author: Aditya Rajiv Ratnam
-"""
-
 import os
 import re
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Configuration
-# NOTE: must match the designation used in MPCReport.txt
-# / PhotReport.txt / Astrometrica.log. 
+# NOTE: must match the designation used in MPCReport.txt, 
+# PhotReport.txt and Astrometrica.log. 
 TARGET_ID = "AST0001"
 
 FILE_PATH_MPC = "MPCReport.txt"
