@@ -24,41 +24,47 @@ def parse_all_logs(target_id):
     line order, because manually-added detections are logged in the order you
     added them (not necessarily chronological order).
     """
+    # Check for all required files
+    required_files = [FILE_PATH_MPC, FILE_PATH_PHOT, FILE_PATH_LOG]
+    for f_path in required_files:
+        if not os.path.exists(f_path):
+            raise FileNotFoundError(f"Missing required file: '{f_path}'. "
+                                    f"Ensure all three Astrometrica output files are in the script directory.")
+        
     observations = []
 
     # 1. Parse MPCReport.txt -> RA/Dec/day_fraction
-    if os.path.exists(FILE_PATH_MPC):
-        with open(FILE_PATH_MPC, 'r') as f:
-            for line in f:
-                if len(line) >= 60 and target_id in line:
-                    ra_h = int(line[32:34])
-                    ra_m = int(line[35:37])
-                    ra_s = float(line[38:44])
+    with open(FILE_PATH_MPC, 'r') as f:
+        for line in f:
+            if len(line) >= 60 and target_id in line:
+                ra_h = int(line[32:34])
+                ra_m = int(line[35:37])
+                ra_s = float(line[38:44])
 
-                    dec_d_raw = line[44:47].strip()
-                    dec_m = int(line[47:50])
-                    dec_s = float(line[50:56])
+                dec_d_raw = line[44:47].strip()
+                dec_m = int(line[47:50])
+                dec_s = float(line[50:56])
 
-                    ra_deg = (ra_h + ra_m / 60.0 + ra_s / 3600.0) * 15.0
-                    sign = -1.0 if '-' in dec_d_raw else 1.0
-                    dec_deg = sign * (abs(int(dec_d_raw)) + dec_m / 60.0 + dec_s / 3600.0)
-                    day_fraction = float(line[15:32].split()[-1])
+                ra_deg = (ra_h + ra_m / 60.0 + ra_s / 3600.0) * 15.0
+                sign = -1.0 if '-' in dec_d_raw else 1.0
+                dec_deg = sign * (abs(int(dec_d_raw)) + dec_m / 60.0 + dec_s / 3600.0)
+                day_fraction = float(line[15:32].split()[-1])
 
-                    observations.append({
-                        "day_fraction": day_fraction,
-                        "ra_deg": ra_deg,
-                        "dec_deg": dec_deg,
-                        "snr": 0.0,
-                        "mag": 0.0,
-                        "fwhm": None,
-                        "flux": None,
-                        "fit_rms": None,
-                        "dra_err": None,
-                        "ddec_err": None,
-                        "zero_point": None,
-                        "dmag_scatter": None,
-                        "ref_stars": None,
-                    })
+                observations.append({
+                    "day_fraction": day_fraction,
+                    "ra_deg": ra_deg,
+                    "dec_deg": dec_deg,
+                    "snr": 0.0,
+                    "mag": 0.0,
+                    "fwhm": None,
+                    "flux": None,
+                    "fit_rms": None,
+                    "dra_err": None,
+                    "ddec_err": None,
+                    "zero_point": None,
+                    "dmag_scatter": None,
+                    "ref_stars": None,
+                })
 
     observations.sort(key=lambda x: x["day_fraction"])
 
