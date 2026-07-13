@@ -113,14 +113,14 @@ The parser automatically extracts and analyzes ten quantitative quality metrics 
 |---------|----------|---------|
 | Magnitude | Photometric | Apparent brightness of the detected object. |
 | Flux | Photometric | Measured signal from the object. |
-| Plate Zero Point | Photometric Calibration | Calibration constant relating instrumental and standard magnitudes. |
-| Calibration Scatter (dmag) | Photometric Calibration | Consistency of the reference-star calibration. |
-| SNR | Detection Quality | Strength of the detected signal relative to background noise. |
+| SNR | Inmage Quality | Strength of the detected signal relative to background noise. |
 | FWHM | Image Quality | Apparent width of the object's image, indicating focus and seeing. |
-| Fit RMS | Astrometric Quality | Accuracy of the plate solution. |
-| dRA / dDec Residuals | Astrometric Quality | Residual errors of the plate solution in right ascension and declination. |
+| Fit RMS | Astrometric Accuracy | Accuracy of the plate solution. |
+| dRA / dDec Residuals | Astrometric Accuracy | Residual errors of the plate solution in right ascension and declination. |
 | Angular Velocity | Kinematic | Apparent rate of motion across the sky. |
-| Reference Stars Used | Calibration Robustness | Number of stars contributing to the plate solution. |
+| Plate Zero Point | Plate Calibration Stability | Calibration constant relating instrumental and standard magnitudes. |
+| Calibration Scatter (dmag) | Plate Calibration Stability | Consistency of the reference-star calibration. |
+| Reference Stars Used | Plate Calibration Stability | Number of stars contributing to the plate solution. |
 
 ## Demonstrated Results
 
