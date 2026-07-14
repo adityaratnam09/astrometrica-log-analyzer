@@ -113,7 +113,7 @@ The parser automatically extracts and analyzes ten quantitative quality metrics 
 |---------|----------|---------|
 | Magnitude | Photometric | Apparent brightness of the detected object. |
 | Flux | Photometric | Measured signal from the object. |
-| SNR | Inmage Quality | Strength of the detected signal relative to background noise. |
+| SNR | Image Quality | Strength of the detected signal relative to background noise. |
 | FWHM | Image Quality | Apparent width of the object's image, indicating focus and seeing. |
 | Fit RMS | Astrometric Accuracy | Accuracy of the plate solution. |
 | dRA / dDec Residuals | Astrometric Accuracy | Residual errors of the plate solution in right ascension and declination. |
