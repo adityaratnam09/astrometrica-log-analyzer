@@ -36,25 +36,30 @@ It automatically
 
 - parses all three Astrometrica output files
 - synchronizes observations using timestamps
-- extracts ten astrometric, photometric, calibration, and kinematic metrics
+- extracts ten astrometric, photometric, calibration, and kinematic quality metrics
 - computes derived angular motion
-- generates publication-quality plots
+- generates publication-quality figures
 - produces summary statistics
 - evaluates plate calibration stability
 - evaluates astrometric residuals
 - quantifies signal-to-noise evolution
 - analyzes observing conditions throughout an observing session
 
-Every figure appearing in the paper is generated automatically.
+Every figure appearing in the accompanying paper is generated automatically.
 
 ---
 
 ## Repository Structure
 
-```
+```text
 astrometrica-log-analyzer/
 │
 ├── astrometrica_report_parser.py
+├── images/
+│   ├── Figure 1 Apparent Sky Motion.png
+│   ├── Figure 2 Observation Quality.png
+│   ├── Figure 3 Astrometric Plate Solution Residuals.png
+│   └── Figure 4 Plate Calibration Stability.png
 ├── README.md
 └── LICENSE
 ```
@@ -67,7 +72,7 @@ Python 3.10+
 
 Required packages
 
-```
+```text
 numpy
 pandas
 matplotlib
@@ -105,6 +110,18 @@ Running the script generates the figures presented in the paper, including
 
 ---
 
+## Sample Output
+
+The framework automatically generates publication-quality figures directly from Astrometrica's standard output files.
+
+### Figure 4 — Plate Calibration Stability
+
+![Plate Calibration Stability](images/Figure%204%20Plate%20Calibration%20Stability.png)
+
+*Example output showing the evolution of the photometric zero point and reference-star calibration scatter throughout an observing session. Together, these metrics help distinguish changes in observing conditions from changes intrinsic to the target.*
+
+---
+
 ## Extracted Metrics
 
 The parser automatically extracts and analyzes ten quantitative quality metrics from Astrometrica's standard output files.
@@ -121,6 +138,8 @@ The parser automatically extracts and analyzes ten quantitative quality metrics 
 | Plate Zero Point | Plate Calibration Stability | Calibration constant relating instrumental and standard magnitudes. |
 | Calibration Scatter (dmag) | Plate Calibration Stability | Consistency of the reference-star calibration. |
 | Reference Stars Used | Plate Calibration Stability | Number of stars contributing to the plate solution. |
+
+---
 
 ## Demonstrated Results
 
@@ -140,7 +159,7 @@ The framework itself, rather than the demonstration dataset, is the primary cont
 
 The parser operates directly on Astrometrica's standard output files.
 
-```
+```text
 MPCReport.txt
 PhotReport.txt
 Astrometrica.log
@@ -160,14 +179,14 @@ This project is released under the MIT License.
 
 If you use this software in research, please cite both the software and the accompanying technical report.
 
-**Software (GitHub):**
+**Software (GitHub)**
 
 ```text
-Ratnam, A. R. (2026). *astrometrica-log-analyzer* (Version 1.0.0) [Computer software]. GitHub. https://github.com/adityaratnam09/astrometrica-log-analyzer
+Ratnam, A. R. (2026). astrometrica-log-analyzer (Version 1.0.0) [Computer software]. GitHub. https://github.com/adityaratnam09/astrometrica-log-analyzer
 ```
 
-**Technical report (Zenodo):**
+**Technical Report (Zenodo)**
 
 ```text
-Ratnam, A. R. (2026). *A Quantitative Framework for Evaluating Asteroid Observations from Astrometrica Log Files*. Zenodo. https://doi.org/10.5281/zenodo.21342573
+Ratnam, A. R. (2026). A Quantitative Framework for Evaluating Asteroid Observations from Astrometrica Log Files. Zenodo. https://doi.org/10.5281/zenodo.21342573
 ```
