@@ -26,6 +26,10 @@ and generates publication-quality figures, summary statistics, and quality diagn
 
 The framework is independent of any particular observing session and can be applied directly to any Astrometrica reduction.
 
+A detailed paper describing the framework is available on Zenodo:
+
+https://doi.org/10.5281/zenodo.21342573
+
 ---
 
 ## Features
